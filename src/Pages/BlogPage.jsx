@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom';
 import { AppContext } from '../context/AppContext';
-import { baseUrl } from '../baseUrl';
 import Header from '../components/Header';
 import Spinner from '../components/Spinner';
 import BlogDetails from '../components/BlogDetails';
