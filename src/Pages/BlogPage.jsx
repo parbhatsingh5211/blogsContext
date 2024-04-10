@@ -46,32 +46,41 @@ const BlogPage = () => {
   }, [location.pathname])
 
   return (
-    <div>
-      <Header/>
+    <div className='flex flex-col items-center justify-center '>
       <div>
-        <button onClick={() => navigation(-1)}>
-          Back
-        </button>
-      </div>
-      {
-        loading ? (<Spinner/>):
-        (
-          blog ? (
-            <div>
-              <BlogDetails post={blog}/>
-              <h2>Related Blogs</h2>
-              {
-                relatedBlogs.map( (post) => (
-                  <div key={post.id}>
-                      <BlogDetails post={post}/>
-                  </div>
-                ))
-              }
-            </div>) : 
-            (<p> No Blog Found</p>
+        <Header/>
+        <div className='mt-[90px]'>
+          { !loading &&
+            <button className="border-2 border-gray-300 py-1 px-4 rounded-md"
+          onClick={() => navigation(-1)}>
+            Back
+          </button>}
+        </div>
+        {
+          loading ? (
+            <div className='flex flex-col items-center justify-center h-screen mt-[-100px]'> 
+              <Spinner/>
+            </div>
+          ):
+          (
+            blog ? (
+              <div className='mt-4'>
+                <BlogDetails post={blog}/>
+                <h2 className='text-3xl font-bold mt-[80px]'>Related Blogs</h2>
+                {
+                  relatedBlogs.map( (post) => (
+                    <div className='mt-7'
+                        key={post.id}>
+                        <BlogDetails post={post}/>
+                    </div>
+                  ))
+                }
+              </div>) : 
+              (<p> No Blog Found</p>
+            )
           )
-        )
-      }
+        }
+      </div>
     </div>
   )
 }

@@ -7,9 +7,12 @@ const Blogs = () => {
   // consume
   const {posts, loading} = useContext(AppContext);
   return (
-    <div className='w-11/12 min-h-screen max-w-[670px] py-8 flex flex-col gap-y-7 mt-[66px] mb-[70px] justify-center items-cente'>
+    <div className='w-11/12 min-h-screen max-w-[670px] py-8 flex flex-col gap-y-7 mt-[66px] mb-[70px] items-center'>
       {
-        loading ? (<Spinner/>) : 
+        loading ? (
+          <div className='flex flex-col items-center justify-center h-screen mt-[-100px]'> 
+              <Spinner/> 
+            </div>) : 
         (
           posts.length === 0 ? 
           (

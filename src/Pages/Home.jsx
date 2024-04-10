@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <div>
       <Header/>
-      <div>
+      <div className='h-full flex justify-center w-screen'>
         <Blogs/>
         <Pagination/>
       </div>
