@@ -68,7 +68,7 @@ const BlogPage = () => {
                 <h2 className='text-3xl font-bold mt-[80px]'>Related Blogs</h2>
                 {
                   relatedBlogs.map( (post) => (
-                    <div className='mt-7'
+                    <div className='mt-7 mb-11'
                         key={post.id}>
                         <BlogDetails post={post}/>
                     </div>
